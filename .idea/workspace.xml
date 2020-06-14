@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dcffe0e-49b7-4287-acb9-bcdc113985f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="程龙" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1dG7UPv3ZXBTRW1dPCNDAVMrtK8" />
@@ -93,22 +96,42 @@
       <workItem from="1592135716730" duration="75000" />
       <workItem from="1592135808621" duration="79000" />
       <workItem from="1592135902039" duration="254000" />
-      <workItem from="1592136217636" duration="291000" />
+      <workItem from="1592136217636" duration="950000" />
     </task>
+    <task id="LOCAL-00001" summary="IDEA上传测试">
+      <created>1592136654812</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592136654812</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="IDEA上传测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="IDEA上传测试" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1592124191023">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592124191023" />
+    <state x="573" y="8" key="CommitChangelistDialog2" timestamp="1592137180540">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="573" y="8" key="CommitChangelistDialog2/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592137180540" />
     <state x="686" y="164" key="FileChooserDialogImpl" timestamp="1592136389198">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="686" y="164" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592136389198" />
+    <state x="585" y="308" key="Github.ShareDialog" timestamp="1592137161036">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="585" y="308" key="Github.ShareDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592137161036" />
     <state x="131" y="63" key="SettingsEditor" timestamp="1592136508545">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
