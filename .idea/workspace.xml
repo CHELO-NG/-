@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8dcffe0e-49b7-4287-acb9-bcdc113985f0" name="Default Changelist" comment="" />
+    <list default="true" id="8dcffe0e-49b7-4287-acb9-bcdc113985f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +19,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1dG7UPv3ZXBTRW1dPCNDAVMrtK8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,7 +32,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -34,6 +41,10 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -46,7 +57,7 @@
   <component name="RunManager">
     <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
-        <artifact name="物流派送:war exploded">
+        <artifact name="LogisticsDistributionSystem:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/_war_exploded" />
           </settings>
@@ -61,7 +72,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="物流派送:war exploded" />
+          <artifact name="LogisticsDistributionSystem:war exploded" />
         </option>
       </method>
     </configuration>
@@ -79,6 +90,10 @@
       <workItem from="1592039595067" duration="1821000" />
       <workItem from="1592041925865" duration="6655000" />
       <workItem from="1592100389022" duration="14225000" />
+      <workItem from="1592135716730" duration="75000" />
+      <workItem from="1592135808621" duration="79000" />
+      <workItem from="1592135902039" duration="254000" />
+      <workItem from="1592136217636" duration="291000" />
     </task>
     <servers />
   </component>
@@ -90,9 +105,17 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592124191023" />
-    <state x="449" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1592041949506">
+    <state x="686" y="164" key="FileChooserDialogImpl" timestamp="1592136389198">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="449" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592041949506" />
+    <state x="686" y="164" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592136389198" />
+    <state x="131" y="63" key="SettingsEditor" timestamp="1592136508545">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="131" y="63" key="SettingsEditor/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592136508545" />
+    <state x="449" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1592136219498">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="449" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592136219498" />
   </component>
 </project>
