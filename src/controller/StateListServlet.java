@@ -39,6 +39,6 @@ public class StateListServlet extends HttpServlet {
         page.setTotal(total);
         req.setAttribute("goods",states);
         req.setAttribute("page",page);
-        req.getRequestDispatcher("").forward(req,resp);// 货物状态页面
+        req.getRequestDispatcher("state.jsp").forward(req,resp);// 货物状态页面
     }
 }

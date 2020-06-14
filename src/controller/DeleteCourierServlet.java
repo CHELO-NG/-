@@ -1,6 +1,5 @@
 package controller;
 
-import entity.Courier;
 import service.CourierService;
 import serviceimpl.CourierServiceImpl;
 
@@ -22,7 +21,7 @@ public class DeleteCourierServlet extends HttpServlet {
         CourierService courierService=new CourierServiceImpl();
         int n=courierService.deleteCourier(courierCode);
         if (n>0){
-            resp.sendRedirect("");// 派送员页面
+            resp.sendRedirect("courier.jsp");// 派送员页面
         }else {
             resp.getWriter().println("删除失败！");
         }

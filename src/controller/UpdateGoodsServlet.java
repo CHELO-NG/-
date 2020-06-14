@@ -43,7 +43,7 @@ public class UpdateGoodsServlet extends HttpServlet {
         GoodsService goodsService=new GoodsServiceImpl();
         int n=goodsService.updateGoods(goods);
         if (n>0){
-            resp.sendRedirect("");// 货物页面
+            resp.sendRedirect("goods.jsp");// 货物页面
         }else {
             resp.getWriter().println("更新失败！");
         }

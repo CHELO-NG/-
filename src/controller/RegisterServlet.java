@@ -31,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
         }
         if (n>0){
             req.getSession().setAttribute("admin",admin);
-            resp.sendRedirect("");// 注册成功
+            resp.sendRedirect("adminLogin.jsp");// 注册成功
         }else {
             String error="注册失败";
             if (n==1){

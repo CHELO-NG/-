@@ -2,7 +2,6 @@ package controller;
 
 import dao.GoodsDao;
 import daoimpl.GoodsDaoImpl;
-import entity.Courier;
 import entity.Goods;
 import entity.Page;
 
@@ -40,6 +39,6 @@ public class GoodsListServlet extends HttpServlet {
         page.setTotal(total);
         req.setAttribute("goods",goods);
         req.setAttribute("page",page);
-        req.getRequestDispatcher("").forward(req,resp);// 货物页面
+        req.getRequestDispatcher("goods.jsp").forward(req,resp);// 货物页面
     }
 }

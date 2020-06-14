@@ -1,10 +1,7 @@
 package controller;
 
-import entity.Courier;
 import entity.Goods;
-import service.CourierService;
 import service.GoodsService;
-import serviceimpl.CourierServiceImpl;
 import serviceimpl.GoodsServiceImpl;
 
 import javax.servlet.ServletException;
@@ -46,9 +43,9 @@ public class AddGoodsServlet extends HttpServlet {
         GoodsService goodsService=new GoodsServiceImpl();
         int n=goodsService.addGoods(goods);
         if (n>0){
-            resp.sendRedirect("");// 货物页面
+            resp.sendRedirect("goods.jsp");// 货物页面
         }else {
-            req.getRequestDispatcher("").forward(req,resp);// 添加货物页面
+            req.getRequestDispatcher("addGoods.jsp").forward(req,resp);// 添加货物页面
         }
     }
 

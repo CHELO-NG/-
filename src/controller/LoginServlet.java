@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
         }
         if (admin!=null){
             req.getSession().setAttribute("admin",admin);
-            resp.sendRedirect("");// 首页
+            resp.sendRedirect("index.jsp");// 首页
         }else {
             req.getRequestDispatcher("").forward(req,resp);// 登录失败页面
         }

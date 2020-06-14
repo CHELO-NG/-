@@ -12,7 +12,7 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session=req.getSession();
         session.removeAttribute("admin");
-        resp.sendRedirect("");// 登录界面
+        resp.sendRedirect("adminLogin.jsp");// 登录界面
     }
 
     @Override

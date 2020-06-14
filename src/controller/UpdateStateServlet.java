@@ -1,10 +1,7 @@
 package controller;
 
-import entity.Salary;
 import entity.State;
-import service.SalaryService;
 import service.StateService;
-import serviceimpl.SalaryServiceImpl;
 import serviceimpl.StateServiceImpl;
 
 import javax.servlet.ServletException;
@@ -27,7 +24,7 @@ public class UpdateStateServlet extends HttpServlet {
         StateService stateService=new StateServiceImpl();
         int n=stateService.updateState(state);
         if (n>0){
-            resp.sendRedirect("");// 工资页面
+            resp.sendRedirect("salary.jsp");// 工资页面
         }else {
             resp.getWriter().println("更新失败！");
         }

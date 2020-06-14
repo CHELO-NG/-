@@ -2,7 +2,6 @@ package controller;
 
 import dao.SalaryDao;
 import daoimpl.SalaryDaoImpl;
-import entity.Goods;
 import entity.Page;
 import entity.Salary;
 
@@ -40,6 +39,6 @@ public class SalaryListServlet extends HttpServlet {
         page.setTotal(total);
         req.setAttribute("goods",salaries);
         req.setAttribute("page",page);
-        req.getRequestDispatcher("").forward(req,resp);// 工资页面
+        req.getRequestDispatcher("salary.jsp").forward(req,resp);// 工资页面
     }
 }

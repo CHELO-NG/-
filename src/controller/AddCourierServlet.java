@@ -25,9 +25,9 @@ public class AddCourierServlet extends HttpServlet {
         CourierService courierService=new CourierServiceImpl();
         int n=courierService.addCourier(courier);
         if (n>0){
-            resp.sendRedirect("");// 派送员页面
+            resp.sendRedirect("courier.jsp");// 派送员页面
         }else {
-            req.getRequestDispatcher("").forward(req,resp);// 添加派送员页面
+            req.getRequestDispatcher("addCourier.jsp").forward(req,resp);// 添加派送员页面
         }
     }
 

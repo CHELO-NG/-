@@ -1,6 +1,5 @@
 package controller;
 
-import entity.Goods;
 import service.GoodsService;
 import serviceimpl.GoodsServiceImpl;
 
@@ -9,10 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class DeleteGoodsServlet extends HttpServlet {
     @Override
@@ -26,7 +21,7 @@ public class DeleteGoodsServlet extends HttpServlet {
         GoodsService goodsService=new GoodsServiceImpl();
         int n=goodsService.deleteGoods(goodsID);
         if (n>0){
-            resp.sendRedirect("");// 货物页面
+            resp.sendRedirect("goods.jsp");// 货物页面
         }else {
             resp.getWriter().println("删除失败！");
         }

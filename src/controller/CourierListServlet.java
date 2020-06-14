@@ -39,6 +39,6 @@ public class CourierListServlet extends HttpServlet {
         page.setTotal(total);
         req.setAttribute("couriers",couriers);
         req.setAttribute("page",page);
-        req.getRequestDispatcher("").forward(req,resp);// 派送员页面
+        req.getRequestDispatcher("courier.jsp").forward(req,resp);// 派送员页面
     }
 }

@@ -1,8 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="LogisticsDistributionSystem:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8dcffe0e-49b7-4287-acb9-bcdc113985f0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/web/addCourier.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/addGoods.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/adminLogin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/courier.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doAddCourier.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doAddGoods.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doUpdateCourier.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doUpdateGoods.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/goods.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/logistics.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/mulu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/salary.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/state.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/title.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/updateCourier.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/updateGoods.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/updateState.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/LogisticsDistributionSystem_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/LogisticsDistributionSystem_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AddCourierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddCourierServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AddGoodsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddGoodsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CourierListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CourierListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DeleteCourierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DeleteCourierServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DeleteGoodsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DeleteGoodsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GoodsListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GoodsListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/SalaryListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/SalaryListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/StateListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/StateListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateCourierServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateCourierServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateGoodsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateGoodsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateSalaryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateSalaryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateStateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateStateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +66,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="ProjectId" id="1dG7UPv3ZXBTRW1dPCNDAVMrtK8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,9 +81,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -44,34 +93,87 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\LogisticsDistributionSystem\web\WEB-INF" />
+      <recent name="F:\LogisticsDistributionSystem\web" />
       <recent name="D:\桌面\物流派送\web\lib" />
       <recent name="D:\桌面\物流派送\src\controller" />
       <recent name="D:\桌面\物流派送\web" />
-      <recent name="D:\桌面\物流派送\src" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 8.5.511" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.511" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="LogisticsDistributionSystem:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/_war_exploded" />
+            <option name="CONTEXT_PATH" value="/LogisticsDistributionSystem_war_exploded" />
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_LogisticsDistributionSystem" />
+      </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="65109" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -79,6 +181,28 @@
         </option>
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -96,7 +220,8 @@
       <workItem from="1592135716730" duration="75000" />
       <workItem from="1592135808621" duration="79000" />
       <workItem from="1592135902039" duration="254000" />
-      <workItem from="1592136217636" duration="950000" />
+      <workItem from="1592136217636" duration="3389000" />
+      <workItem from="1592139629234" duration="1221000" />
     </task>
     <task id="LOCAL-00001" summary="IDEA上传测试">
       <created>1592136654812</created>
@@ -105,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592136654812</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="IDEA上传测试">
+      <created>1592137207496</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592137207496</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,29 +248,93 @@
     <option name="LAST_COMMIT_MESSAGE" value="IDEA上传测试" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="76" key="#Notifications" timestamp="1592137289004">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="76" key="#Notifications/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592137289004" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592139878582">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592139878582" />
     <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1592124191023">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592124191023" />
-    <state x="573" y="8" key="CommitChangelistDialog2" timestamp="1592137180540">
+    <state x="439" y="324" key="#com.intellij.javaee.module.view.web.EditWebRootDialog" timestamp="1592140208473">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="573" y="8" key="CommitChangelistDialog2/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592137180540" />
-    <state x="686" y="164" key="FileChooserDialogImpl" timestamp="1592136389198">
+    <state x="439" y="324" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140208473" />
+    <state x="573" y="8" key="CommitChangelistDialog2" timestamp="1592137206469">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="686" y="164" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592136389198" />
+    <state x="573" y="8" key="CommitChangelistDialog2/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592137206469" />
+    <state x="351" y="210" key="FileChooserDialogImpl" timestamp="1592140267993">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="351" y="210" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140267993" />
     <state x="585" y="308" key="Github.ShareDialog" timestamp="1592137161036">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="585" y="308" key="Github.ShareDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592137161036" />
-    <state x="131" y="63" key="SettingsEditor" timestamp="1592136508545">
+    <state width="1024" height="213" key="GridCell.Tab.0.bottom" timestamp="1592140524977">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="131" y="63" key="SettingsEditor/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592136508545" />
-    <state x="449" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1592136219498">
+    <state width="1024" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524977" />
+    <state width="1024" height="213" key="GridCell.Tab.0.center" timestamp="1592140524977">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="449" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592136219498" />
+    <state width="1024" height="213" key="GridCell.Tab.0.center/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524977" />
+    <state width="1024" height="213" key="GridCell.Tab.0.left" timestamp="1592140524977">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.0.left/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524977" />
+    <state width="1024" height="213" key="GridCell.Tab.0.right" timestamp="1592140524977">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.0.right/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524977" />
+    <state width="1024" height="213" key="GridCell.Tab.1.bottom" timestamp="1592140524897">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.1.bottom/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524897" />
+    <state width="1024" height="213" key="GridCell.Tab.1.center" timestamp="1592140524897">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.1.center/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524897" />
+    <state width="1024" height="213" key="GridCell.Tab.1.left" timestamp="1592140524897">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.1.left/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524897" />
+    <state width="1024" height="213" key="GridCell.Tab.1.right" timestamp="1592140524897">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.1.right/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524897" />
+    <state width="1024" height="213" key="GridCell.Tab.2.bottom" timestamp="1592140524898">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.2.bottom/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524897" />
+    <state width="1024" height="213" key="GridCell.Tab.2.center" timestamp="1592140524897">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.2.center/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524897" />
+    <state width="1024" height="213" key="GridCell.Tab.2.left" timestamp="1592140524897">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.2.left/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524897" />
+    <state width="1024" height="213" key="GridCell.Tab.2.right" timestamp="1592140524897">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1024" height="213" key="GridCell.Tab.2.right/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140524897" />
+    <state x="131" y="0" key="SettingsEditor" timestamp="1592140335201">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="131" y="0" key="SettingsEditor/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592140335201" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1592139193010">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592139193010" />
+    <state x="449" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1592139631372">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="449" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834/-1920.0.1920.1050@0.0.1536.834" timestamp="1592139631372" />
   </component>
 </project>

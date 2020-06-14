@@ -24,7 +24,7 @@ public class UpdateSalaryServlet extends HttpServlet {
         SalaryService salaryService=new SalaryServiceImpl();
         int n=salaryService.updateSalary(salary);
         if (n>0){
-            resp.sendRedirect("");// 工资页面
+            resp.sendRedirect("salary.jsp");// 工资页面
         }else {
             resp.getWriter().println("更新失败！");
         }
