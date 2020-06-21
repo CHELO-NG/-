@@ -29,21 +29,24 @@ public class UpdateGoodsServlet extends HttpServlet {
         String consignee=req.getParameter("consignee");
         String phone=req.getParameter("phone");
         String courierID=req.getParameter("courierID");
+        String courierPhone=req.getParameter("courierPhone");
+        String goodsState=req.getParameter("goodsState");
         String date_str = req.getParameter("date");
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         Goods goods=null;
         try {
             Date date=df.parse(date_str);
-            goods=new Goods(goodsID,goodsName,goodsStart,goodsSend,consigner,consignee,phone,courierID,date);
+            goods=new Goods(goodsID,goodsName,goodsStart,goodsSend,consigner,consignee,phone,courierID,courierPhone,date,goodsState);
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
+        System.out.println(goods.toString());
         GoodsService goodsService=new GoodsServiceImpl();
         int n=goodsService.updateGoods(goods);
         if (n>0){
-            resp.sendRedirect("goods.jsp");// 货物页面
+            resp.sendRedirect("goods");// 货物页面
         }else {
             resp.getWriter().println("更新失败！");
         }

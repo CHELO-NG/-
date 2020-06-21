@@ -1,25 +1,29 @@
 package entity;
 
 public class Courier {
-    private String courierCode;// 派送人员编号
+    private String courierID;// 派送人员编号
     private String courierName;// 派送人员姓名
     private String courierPhone;// 派送人员电话号码
+    private String courierArea;// 派送范围
+    private String courierSalary;// 派送人员薪水
 
     public Courier() {
     }
 
-    public Courier(String courierCode, String courierName, String courierPhone) {
-        this.courierCode = courierCode;
+    public Courier(String courierCode, String courierName, String courierPhone, String courierArea, String courierSalary) {
+        this.courierID = courierCode;
         this.courierName = courierName;
         this.courierPhone = courierPhone;
+        this.courierArea = courierArea;
+        this.courierSalary = courierSalary;
     }
 
-    public String getCourierCode() {
-        return courierCode;
+    public String getCourierID() {
+        return courierID;
     }
 
-    public void setCourierCode(String courierCode) {
-        this.courierCode = courierCode;
+    public void setCourierID(String courierCode) {
+        this.courierID = courierCode;
     }
 
     public String getCourierName() {
@@ -36,5 +40,32 @@ public class Courier {
 
     public void setCourierPhone(String courierPhone) {
         this.courierPhone = courierPhone;
+    }
+
+    public String getCourierArea() {
+        return courierArea;
+    }
+
+    public void setCourierArea(String courierArea) {
+        this.courierArea = courierArea;
+    }
+
+    public String getCourierSalary() {
+        return courierSalary;
+    }
+
+    public void setCourierSalary(String courierSalary) {
+        this.courierSalary = courierSalary;
+    }
+
+    @Override
+    public String toString() {
+        return "Courier{" +
+                "courierID='" + courierID + '\'' +
+                ", courierName='" + courierName + '\'' +
+                ", courierPhone='" + courierPhone + '\'' +
+                ", courierArea='" + courierArea + '\'' +
+                ", courierSalary='" + courierSalary + '\'' +
+                '}';
     }
 }

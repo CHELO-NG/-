@@ -20,8 +20,12 @@ public class GoodsListServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int start=0;
         int count=10;
-        start=Integer.parseInt(req.getParameter("page.start"));
-        count=Integer.parseInt(req.getParameter("page.count"));
+        try {
+            start=Integer.parseInt(req.getParameter("page.start"));
+            count=Integer.parseInt(req.getParameter("page.count"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         Page page=new Page(start,count);
         List<Goods> goods=null;
@@ -39,6 +43,6 @@ public class GoodsListServlet extends HttpServlet {
         page.setTotal(total);
         req.setAttribute("goods",goods);
         req.setAttribute("page",page);
-        req.getRequestDispatcher("goods.jsp").forward(req,resp);// 货物页面
+        req.getRequestDispatcher("/goods.jsp").forward(req,resp);// 货物页面
     }
 }

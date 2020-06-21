@@ -1,9 +1,9 @@
 package entity;
 
 public class Page {
-    private int start;
-    private int count;
-    private int total;
+    private Integer start;
+    private Integer count;
+    private Integer total;
 
     public Page(int start, int count) {
         this.start = start;

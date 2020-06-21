@@ -15,33 +15,42 @@ public class CourierDaoImpl  implements CourierDao {
 
     @Override
     public int addCourier(Courier courier) {
-        String sql = "insert into courier values(?,?,?)";
-        Object[] objs = {courier.getCourierCode(),courier.getCourierName(),courier.getCourierPhone()};
+        String sql = "insert all" +
+                " into courier (courierID,courierName,courierPhone,courierArea) values(?,?,?,?)" +
+                " into salary(courierID,courierSalary) values(?,?)";
+        Object[] objs = {courier.getCourierID(),courier.getCourierName(),courier.getCourierPhone(),courier.getCourierArea(),courier.getCourierID(),courier.getCourierSalary()};
         int n = JDBCUtil.excuteDML(sql, objs);
         return n;
     }
 
     @Override
-    public int deleteCourier(String courierCode) {
-        String sql = "delete from courier where courierCode=?";
-        Object[] objs = {courierCode};
-        int n = JDBCUtil.excuteDML(sql, objs);
-        return n;
+    public int deleteCourier(String courierID) {
+        String sql1 = "delete from salary where courierID=?";
+        Object[] objs1 = {courierID};
+        int n1 = JDBCUtil.excuteDML(sql1, objs1);
+        String sql2 = "delete from courier where courierID=?";
+        Object[] objs2 = {courierID};
+        int n2 = JDBCUtil.excuteDML(sql2, objs2);
+        return (n1+n2);
     }
 
     @Override
     public int updateCourier(Courier courier) {
-        String sql = "update courier set courierName=?,courierPhone=? where courierCode=?";
-        Object[] objs = {courier.getCourierName(),courier.getCourierPhone(),courier.getCourierCode()};
-        int n = JDBCUtil.excuteDML(sql, objs);
-        return n;
+        String sql1 = "update courier set courierName=?,courierPhone=?,courierArea=? where courierID=?";
+        Object[] objs1 = {courier.getCourierName(),courier.getCourierPhone(),courier.getCourierArea(),courier.getCourierID()};
+        int n1 = JDBCUtil.excuteDML(sql1, objs1);
+        String sql2 = "update salary set courierSalary=? where courierID=?";
+        Object[] objs2 = {courier.getCourierSalary(),courier.getCourierID()};
+        int n2 = JDBCUtil.excuteDML(sql2, objs2);
+        System.out.println("更新了"+(n1+n2));
+        return n1+n2;
     }
 
     @Override
     public int getTotal() throws SQLException {
         Connection conn = JDBCUtil.getConnection();
         int total = 0;
-        String sql = "SELECT COUNT(*) FROM courier";
+        String sql = "SELECT COUNT(*) FROM courier,salary where courier.courierID=salary.courierID";
         PreparedStatement ps = JDBCUtil.getPreparedStatement(conn, sql);
         ResultSet rs = null;
         try {
@@ -57,12 +66,12 @@ public class CourierDaoImpl  implements CourierDao {
     }
 
     @Override
-    public Courier selectCourier(String courierCode) throws SQLException {
+    public Courier selectCourier(String courierID) throws SQLException {
         Connection conn = JDBCUtil.getConnection();
-        String sql = "select * from courier where courierCode=?";
+        String sql = "select courier.courierID,courierName,courierPhone,courierArea,courierSalary from courier,salary where courier.courierID=? and courier.courierID=salary.courierID";
         PreparedStatement ps = JDBCUtil.getPreparedStatement(conn, sql);
         try {
-            ps.setString(1, courierCode);
+            ps.setString(1, courierID);
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
@@ -71,7 +80,9 @@ public class CourierDaoImpl  implements CourierDao {
         try {
             rs = ps.executeQuery();
             if(rs.next()) {
-                courier = new Courier(rs.getString("courierCode"), rs.getString("courierName"), rs.getString("courierPhone"));
+                courier = new Courier(rs.getString("courier.courierID"),
+                        rs.getString("courierName"), rs.getString("courierPhone"),
+                        rs.getString("courierArea"),rs.getString("courierSalary"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -84,7 +95,7 @@ public class CourierDaoImpl  implements CourierDao {
     @Override
     public List<Courier> list(int start, int count) throws SQLException {
         Connection conn = JDBCUtil.getConnection();
-        String sql="select * from courier limit ?,?";
+        String sql="select * from (select courier.courierID,courierName,courierPhone,courierArea,courierSalary from courier,salary where courier.courierID=salary.courierID) c order by courierID limit ?,? ";
         PreparedStatement ps = JDBCUtil.getPreparedStatement(conn, sql);
         ResultSet rs = null;
         List<Courier> list = new ArrayList<Courier>();
@@ -93,7 +104,9 @@ public class CourierDaoImpl  implements CourierDao {
             ps.setInt(2,count);
             rs = ps.executeQuery();
             while(rs.next()) {
-                Courier courier = new Courier(rs.getString("courierCode"), rs.getString("courierName"), rs.getString("courierPhone"));
+                Courier courier = new Courier(rs.getString("courierID"),
+                        rs.getString("courierName"), rs.getString("courierPhone"),
+                        rs.getString("courierArea"),rs.getString("courierSalary"));
                 list.add(courier);
             }
         } catch (SQLException e) {

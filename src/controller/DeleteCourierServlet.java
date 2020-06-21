@@ -16,12 +16,13 @@ public class DeleteCourierServlet extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        String courierCode=req.getParameter("courierCode");
+        String courierCode=req.getParameter("courierID");
 
         CourierService courierService=new CourierServiceImpl();
         int n=courierService.deleteCourier(courierCode);
+        courierService.toString();
         if (n>0){
-            resp.sendRedirect("courier.jsp");// 派送员页面
+            resp.sendRedirect("courier");// 派送员页面
         }else {
             resp.getWriter().println("删除失败！");
         }

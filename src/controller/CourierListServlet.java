@@ -20,11 +20,16 @@ public class CourierListServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int start=0;
         int count=10;
-        start=Integer.parseInt(req.getParameter("page.start"));
-        count=Integer.parseInt(req.getParameter("page.count"));
+        try {
+            start=Integer.parseInt(req.getParameter("page.start"));
+            count=Integer.parseInt(req.getParameter("page.count"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         Page page=new Page(start,count);
-        List<Courier> couriers=null;
+
+        List<Courier> couriers = null;
         try {
             couriers=courierDao.list(page.getStart(),page.getCount());
         } catch (SQLException e) {
@@ -39,6 +44,6 @@ public class CourierListServlet extends HttpServlet {
         page.setTotal(total);
         req.setAttribute("couriers",couriers);
         req.setAttribute("page",page);
-        req.getRequestDispatcher("courier.jsp").forward(req,resp);// 派送员页面
+        req.getRequestDispatcher("/courier.jsp").forward(req,resp);// 派送员页面
     }
 }

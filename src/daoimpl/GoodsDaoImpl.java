@@ -15,38 +15,47 @@ import java.util.List;
 public class GoodsDaoImpl implements GoodsDao {
     @Override
     public int addGoods(Goods goods) {
-        String sql = "insert into goods values(?,?,?,?,?,?,?,?,?)";
-        Object[] objs = {goods.getGoodsID(),goods.getGoodsName(),goods.getGoodsStart(),
+        String sql1 = "insert into goods (goodsID,goodsName,goodsStart,goodsSend,consigner,consignee,phone,courierID,date) values(?,?,?,?,?,?,?,?,?)";
+        Object[] objs1 = {goods.getGoodsID(),goods.getGoodsName(),goods.getGoodsStart(),
         goods.getGoodsSend(),goods.getConsigner(),goods.getConsignee(),goods.getPhone(),
         goods.getCourierID(),goods.getDate()};
-        int n = JDBCUtil.excuteDML(sql, objs);
-        return n;
+        int n1 = JDBCUtil.excuteDML(sql1, objs1);
+        String sql2 = "insert into state (goodsID,goodsState) values(?,?)";
+        Object[] objs2 = {goods.getGoodsID(),goods.getGoodsState()};
+        int n2= JDBCUtil.excuteDML(sql2, objs2);
+        return (n1+n2)/2;
     }
 
     @Override
     public int deleteGoods(String goodsID) {
-        String sql = "delete from goods where goodsID=?";
-        Object[] objs = {goodsID};
-        int n = JDBCUtil.excuteDML(sql, objs);
-        return n;
+        String sql1 = "delete from state where goodsID=?";
+        Object[] objs1 = {goodsID};
+        int n1 = JDBCUtil.excuteDML(sql1, objs1);
+        String sql2 = "delete from goods where goodsID=?";
+        Object[] objs2 = {goodsID};
+        int n2 = JDBCUtil.excuteDML(sql2, objs2);
+        return (n1+n2);
     }
 
     @Override
     public int updateGoods(Goods goods) {
-        String sql = "update goods set goodsName=?,goodsStart=?,goodsSend=?,consigner=?,consignee=?,phone=?" +
-                "courierID=?,date=? where goodsID=?";
-        Object[] objs = {goods.getGoodsName(),goods.getGoodsStart(),
+        String sql1 = "update goods set goodsName=?,goodsStart=?,goodsSend=?,consigner=?,consignee=?,phone=?" +
+                "courierID=?,date=?,goodsState=? where goodsID=?";
+        Object[] objs1 = {goods.getGoodsName(),goods.getGoodsStart(),
                 goods.getGoodsSend(),goods.getConsigner(),goods.getConsignee(),goods.getPhone(),
-                goods.getCourierID(),goods.getDate(),goods.getGoodsID()};
-        int n = JDBCUtil.excuteDML(sql, objs);
-        return n;
+                goods.getCourierID(),goods.getDate(),goods.getGoodsState(),goods.getGoodsID()};
+        int n1 = JDBCUtil.excuteDML(sql1, objs1);
+        String sql2 = "update state set goodsState=? where goodsID=?";
+        Object[] objs2 = {goods.getGoodsState(),goods.getGoodsID()};
+        int n2 = JDBCUtil.excuteDML(sql2, objs2);
+        return n1+n2;
     }
 
     @Override
     public int getTotal() throws SQLException {
         Connection conn = JDBCUtil.getConnection();
         int total = 0;
-        String sql = "SELECT COUNT(*) FROM goods";
+        String sql = "SELECT COUNT(*) FROM goods,state,courier where goods.goodsID=state.goodsID and goods.courierID=courier.courierID";
         PreparedStatement ps = JDBCUtil.getPreparedStatement(conn, sql);
         ResultSet rs = null;
         try {
@@ -64,7 +73,8 @@ public class GoodsDaoImpl implements GoodsDao {
     @Override
     public Goods selectGoods(String goodsID) throws SQLException {
         Connection conn = JDBCUtil.getConnection();
-        String sql = "select * from goods where goodsID=?";
+        String sql = "select goods.goodsID,goodsName,goodsStart,goodsSend,consigner,consignee,phone,goods.courierID," +
+                "courierPhone,date,goodsState from goods,state,courier where goods.goodsID=? and goods.goodsID=state.goodsID and goods.courierID=courier.courierID";
         PreparedStatement ps = JDBCUtil.getPreparedStatement(conn, sql);
         try {
             ps.setString(1, goodsID);
@@ -76,9 +86,10 @@ public class GoodsDaoImpl implements GoodsDao {
         try {
             rs = ps.executeQuery();
             if(rs.next()) {
-                goods = new Goods(rs.getString("goodsID"), rs.getString("goodsName"), rs.getString("goodsStart"),
+                goods = new Goods(rs.getString("goods.goodsID"), rs.getString("goodsName"), rs.getString("goodsStart"),
                         rs.getString("goodsSend"), rs.getString("consigner"), rs.getString("consignee"),
-                        rs.getString("phone"), rs.getString("courierID"), rs.getDate("date"));
+                        rs.getString("phone"), rs.getString("goods.courierID"),rs.getString("courierPhone"),
+                        rs.getDate("date"),rs.getString("goodsState"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -91,7 +102,8 @@ public class GoodsDaoImpl implements GoodsDao {
     @Override
     public List<Goods> list(int start, int count) throws SQLException {
         Connection conn = JDBCUtil.getConnection();
-        String sql="select * from goods limit ?,?";
+        String sql="select * from (select goods.goodsID,goodsName,goodsStart,goodsSend,consigner,consignee,phone,courier.courierID," +
+                "courierPhone,date,goodsState from goods,state,courier where goods.goodsID=state.goodsID and goods.courierID=courier.courierID) g limit ?,?";
         PreparedStatement ps = JDBCUtil.getPreparedStatement(conn, sql);
         ResultSet rs = null;
         List<Goods> list = new ArrayList<Goods>();
@@ -102,7 +114,8 @@ public class GoodsDaoImpl implements GoodsDao {
             while(rs.next()) {
                 Goods goods = new Goods(rs.getString("goodsID"), rs.getString("goodsName"), rs.getString("goodsStart"),
                         rs.getString("goodsSend"), rs.getString("consigner"), rs.getString("consignee"),
-                        rs.getString("phone"), rs.getString("courierID"), rs.getDate("date"));
+                        rs.getString("phone"), rs.getString("courierID"),rs.getString("courierPhone"),
+                        rs.getDate("date"),rs.getString("goodsState"));
                 list.add(goods);
             }
         } catch (SQLException e) {

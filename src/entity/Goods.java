@@ -11,12 +11,14 @@ public class Goods {
     private String consignee;// 收货人
     private String phone;// 收货人电话
     private String courierID;// 派送人员编号
+    private String courierPhone;// 派送人员电话号码
     private Date date;// 发货时间
+    private String goodsState;// 货物状态
 
     public Goods() {
     }
 
-    public Goods(String goodsID, String goodsName, String goodsStart, String goodsSend, String consigner, String consignee, String phone, String courierID, Date date) {
+    public Goods(String goodsID, String goodsName, String goodsStart, String goodsSend, String consigner, String consignee, String phone, String courierID, String courierPhone, Date date, String goodsState) {
         this.goodsID = goodsID;
         this.goodsName = goodsName;
         this.goodsStart = goodsStart;
@@ -25,7 +27,9 @@ public class Goods {
         this.consignee = consignee;
         this.phone = phone;
         this.courierID = courierID;
+        this.courierPhone = courierPhone;
         this.date = date;
+        this.goodsState = goodsState;
     }
 
     public String getGoodsID() {
@@ -92,11 +96,44 @@ public class Goods {
         this.courierID = courierID;
     }
 
+    public String getCourierPhone() {
+        return courierPhone;
+    }
+
+    public void setCourierPhone(String courierPhone) {
+        this.courierPhone = courierPhone;
+    }
+
     public Date getDate() {
         return date;
     }
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getGoodsState() {
+        return goodsState;
+    }
+
+    public void setGoodsState(String goodsState) {
+        this.goodsState = goodsState;
+    }
+
+    @Override
+    public String toString() {
+        return "Goods{" +
+                "goodsID='" + goodsID + '\'' +
+                ", goodsName='" + goodsName + '\'' +
+                ", goodsStart='" + goodsStart + '\'' +
+                ", goodsSend='" + goodsSend + '\'' +
+                ", consigner='" + consigner + '\'' +
+                ", consignee='" + consignee + '\'' +
+                ", phone='" + phone + '\'' +
+                ", courierID='" + courierID + '\'' +
+                ", courierPhone='" + courierPhone + '\'' +
+                ", date=" + date +
+                ", goodsState='" + goodsState + '\'' +
+                '}';
     }
 }
