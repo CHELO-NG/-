@@ -10,28 +10,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class CourierDaoImpl  implements CourierDao {
 
     @Override
     public int addCourier(Courier courier) {
-        String sql = "insert all" +
-                " into courier (courierID,courierName,courierPhone,courierArea) values(?,?,?,?)" +
-                " into salary(courierID,courierSalary) values(?,?)";
-        Object[] objs = {courier.getCourierID(),courier.getCourierName(),courier.getCourierPhone(),courier.getCourierArea(),courier.getCourierID(),courier.getCourierSalary()};
-        int n = JDBCUtil.excuteDML(sql, objs);
-        return n;
+        String sql1 = "insert into courier (courierID,courierName,courierPhone,courierArea) values(?,?,?,?)";
+        Object[] objs1 = {courier.getCourierID(),courier.getCourierName(),courier.getCourierPhone(),courier.getCourierArea()};
+        int n1 = JDBCUtil.excuteDML(sql1, objs1);
+        String sql2 = "insert into salary(courierID,courierSalary) values(?,?)";
+        Object[] objs2 = {courier.getCourierID(),courier.getCourierSalary()};
+        int n2 = JDBCUtil.excuteDML(sql2, objs2);
+        return (n1+n2)/2;
     }
 
     @Override
-    public int deleteCourier(String courierID) {
+    public int deleteCourier(int courierID) {
         String sql1 = "delete from salary where courierID=?";
         Object[] objs1 = {courierID};
         int n1 = JDBCUtil.excuteDML(sql1, objs1);
         String sql2 = "delete from courier where courierID=?";
         Object[] objs2 = {courierID};
         int n2 = JDBCUtil.excuteDML(sql2, objs2);
-        return (n1+n2);
+        return (n1+n2)/2;
     }
 
     @Override
@@ -66,12 +68,12 @@ public class CourierDaoImpl  implements CourierDao {
     }
 
     @Override
-    public Courier selectCourier(String courierID) throws SQLException {
+    public Courier selectCourier(int courierID) throws SQLException {
         Connection conn = JDBCUtil.getConnection();
         String sql = "select courier.courierID,courierName,courierPhone,courierArea,courierSalary from courier,salary where courier.courierID=? and courier.courierID=salary.courierID";
         PreparedStatement ps = JDBCUtil.getPreparedStatement(conn, sql);
         try {
-            ps.setString(1, courierID);
+            ps.setInt(1, courierID);
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
@@ -80,7 +82,7 @@ public class CourierDaoImpl  implements CourierDao {
         try {
             rs = ps.executeQuery();
             if(rs.next()) {
-                courier = new Courier(rs.getString("courier.courierID"),
+                courier = new Courier(rs.getInt("courier.courierID"),
                         rs.getString("courierName"), rs.getString("courierPhone"),
                         rs.getString("courierArea"),rs.getString("courierSalary"));
             }
@@ -104,7 +106,7 @@ public class CourierDaoImpl  implements CourierDao {
             ps.setInt(2,count);
             rs = ps.executeQuery();
             while(rs.next()) {
-                Courier courier = new Courier(rs.getString("courierID"),
+                Courier courier = new Courier(rs.getInt("courierID"),
                         rs.getString("courierName"), rs.getString("courierPhone"),
                         rs.getString("courierArea"),rs.getString("courierSalary"));
                 list.add(courier);
@@ -115,5 +117,40 @@ public class CourierDaoImpl  implements CourierDao {
             JDBCUtil.close(rs, ps, conn);
         }
         return list;
+    }
+
+    @Override
+    public List<Courier> listByKeywords(int start, int count,String keywords) throws SQLException {
+        Connection conn = JDBCUtil.getConnection();
+        String sql="select * from (select courier.courierID,courierName,courierPhone,courierArea,courierSalary from courier,salary where courier.courierID=salary.courierID and (courier.courierID=? or courierName=? or courierPhone=? or courierArea=? )) c order by courierID limit ?,? ";
+        PreparedStatement ps = JDBCUtil.getPreparedStatement(conn, sql);
+        ResultSet rs = null;
+        List<Courier> listByKeywords = new ArrayList<Courier>();
+        try {
+            Pattern pattern = Pattern.compile("[0-9]*");
+            if (keywords!=null &&keywords!=""&& pattern.matcher(keywords).matches()){
+                ps.setInt(1,Integer.parseInt(keywords));
+            } else{
+                ps.setString(1,keywords);
+            }
+            ps.setString(2,keywords);
+            ps.setString(3,keywords);
+            ps.setString(4,keywords);
+            ps.setInt(5,start);
+            ps.setInt(6,count);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+                Courier courier = new Courier(rs.getInt("courierID"),
+                        rs.getString("courierName"), rs.getString("courierPhone"),
+                        rs.getString("courierArea"),rs.getString("courierSalary"));
+                listByKeywords.add(courier);
+                System.out.println(courier.toString());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(rs, ps, conn);
+        }
+        return listByKeywords;
     }
 }

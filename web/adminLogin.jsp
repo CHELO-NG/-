@@ -9,49 +9,36 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </head>
-<script language="javascript">
-	function validateLogin() {
-		var aId = document.frmLogin.aid.value;
-		var password = document.frmLogin.password.value;
-		if ((aId == "") || (aId == "输入管理员用户名")) {
-			alert("请输入用户名!");
-			return false;
-		}
-		if ((password == "") || (password == "输入管理员密码")) {
-			alert("请输入密码!");
-			return false;
-		}
-	}
-</script>
-<body>
-<center>
-        <font face="楷体" size="10" color="#FFD700">18130047班物流派送管理</font><br>
-		<font face="楷体" size="6" color="#000">登录界面</font>
-		<form action="Login_check.jsp" method="post" name="frmLogin">
-			<table width="300" height="180" border="5" bordercolor="#A0A0A0">
-				<tr>
-					<th>用户名：</th>
-					<td><input type="text" name="aid" value="输入物流管理员用户名"
-						maxlength="16"
-						οnfοcus="if(this.value == '输入管理员用户名') this.value =''"></td>
-				</tr>
-				<tr>
-					<th>密  码：</th>
-					<td><input type="text" name="apassword" value="输入物流管理员密码"
-						maxlength="20" 
-						οnfοcus="if(this.value == '输入管理员密码') this.value =''">
-						</td>
-				</tr>
-				<tr>
-					<!-- 当点击登录则需要在Login_check.jsp进行判断,点击注册会跳转到注册界面 -->
-					<td colspan="2" align="center">
-					<input type="submit" value="登录" οnclick="return validateLogin()"> 
-					
-					<input type="reset" value="重  置"></td>
-				</tr>
-			</table>
-		</form>
-		<a href="register.jsp">还没有账号？点击这里进行注册</a>
+<body style="background:url('image/background.jpg')">
+	<center>
+		<br><br><br><br><br><br><br><br><br><br>
+		<div class="panel panel-primary"  style="width:30%;">
+			<div class="panel-heading">
+				<h1 class="panel-title">登录</h1>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal" role="form" action="login" method="post">
+					<div class="form-group">
+						<label class="col-sm-5 control-label">用户登录</label>
+						<div class="col-sm-6">
+							<input class="form-control" type="text" name="adminID">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-5 control-label">登录密码</label>
+						<div class="col-sm-6">
+							<input class="form-control" type="password" name="adminPassword">
+						</div>
+					</div>
+					<br>
+					<input type="submit" value="登录">&nbsp;&nbsp;
+					<input type="reset" value="重置">
+					<h5>如果您尚未注册，请先进行<a href="register.jsp">&nbsp;注册&nbsp;</a></h5>
+				</form>
+			</div>
+		</div>
+
+	</center>
 </center>
 </body>
 </html>

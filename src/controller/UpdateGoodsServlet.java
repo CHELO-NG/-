@@ -21,14 +21,14 @@ public class UpdateGoodsServlet extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        String goodsID=req.getParameter("goodsID");
+        int goodsID=Integer.parseInt(req.getParameter("goodsID"));
         String goodsName=req.getParameter("goodsName");
         String goodsStart=req.getParameter("goodsStart");
         String goodsSend=req.getParameter("goodsSend");
         String consigner=req.getParameter("consigner");
         String consignee=req.getParameter("consignee");
         String phone=req.getParameter("phone");
-        String courierID=req.getParameter("courierID");
+        int courierID=Integer.parseInt(req.getParameter("courierID"));
         String courierPhone=req.getParameter("courierPhone");
         String goodsState=req.getParameter("goodsState");
         String date_str = req.getParameter("date");

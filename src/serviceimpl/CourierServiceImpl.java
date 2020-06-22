@@ -16,7 +16,7 @@ public class CourierServiceImpl implements CourierService {
     }
 
     @Override
-    public int deleteCourier(String courierID) {
+    public int deleteCourier(int courierID) {
         return courierDao.deleteCourier(courierID);
     }
 
@@ -26,12 +26,17 @@ public class CourierServiceImpl implements CourierService {
     }
 
     @Override
-    public Courier queryOneCourier(String courierID) throws SQLException {
+    public Courier queryOneCourier(int courierID) throws SQLException {
         return courierDao.selectCourier(courierID);
     }
 
     @Override
     public List<Courier> queryAllCourier(int start, int count) throws SQLException {
         return courierDao.list(start,count);
+    }
+
+    @Override
+    public List<Courier> queryCourierByKeywords(int start, int count, String keywords) throws SQLException {
+        return courierDao.listByKeywords(start, count, keywords);
     }
 }

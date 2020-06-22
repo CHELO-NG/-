@@ -3,14 +3,14 @@ package entity;
 import java.util.Date;
 
 public class Goods {
-    private String goodsID;// 货单号
+    private int goodsID;// 货单号
     private String goodsName;// 货物名称
     private String goodsStart;// 发货地址
     private String goodsSend;// 收货地址
     private String consigner;// 发货人
     private String consignee;// 收货人
     private String phone;// 收货人电话
-    private String courierID;// 派送人员编号
+    private int courierID;// 派送人员编号
     private String courierPhone;// 派送人员电话号码
     private Date date;// 发货时间
     private String goodsState;// 货物状态
@@ -18,7 +18,7 @@ public class Goods {
     public Goods() {
     }
 
-    public Goods(String goodsID, String goodsName, String goodsStart, String goodsSend, String consigner, String consignee, String phone, String courierID, String courierPhone, Date date, String goodsState) {
+    public Goods(int goodsID, String goodsName, String goodsStart, String goodsSend, String consigner, String consignee, String phone, int courierID, String courierPhone, Date date, String goodsState) {
         this.goodsID = goodsID;
         this.goodsName = goodsName;
         this.goodsStart = goodsStart;
@@ -32,11 +32,11 @@ public class Goods {
         this.goodsState = goodsState;
     }
 
-    public String getGoodsID() {
+    public int getGoodsID() {
         return goodsID;
     }
 
-    public void setGoodsID(String goodsID) {
+    public void setGoodsID(int goodsID) {
         this.goodsID = goodsID;
     }
 
@@ -88,11 +88,11 @@ public class Goods {
         this.phone = phone;
     }
 
-    public String getCourierID() {
+    public int getCourierID() {
         return courierID;
     }
 
-    public void setCourierID(String courierID) {
+    public void setCourierID(int courierID) {
         this.courierID = courierID;
     }
 

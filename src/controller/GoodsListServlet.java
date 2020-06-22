@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class GoodsListServlet extends HttpServlet {
@@ -20,6 +23,7 @@ public class GoodsListServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int start=0;
         int count=10;
+        String keywords=req.getParameter("keywords");
         try {
             start=Integer.parseInt(req.getParameter("page.start"));
             count=Integer.parseInt(req.getParameter("page.count"));
@@ -29,8 +33,14 @@ public class GoodsListServlet extends HttpServlet {
 
         Page page=new Page(start,count);
         List<Goods> goods=null;
+
         try {
-            goods=goodsDao.list(page.getStart(),page.getCount());
+            if (keywords==null){
+                goods=goodsDao.list(page.getStart(),page.getCount());
+            }else {
+               goods=goodsDao.listByKeywords(page.getStart(),page.getCount(),keywords);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

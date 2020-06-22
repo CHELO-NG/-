@@ -31,14 +31,14 @@ public class RegisterServlet extends HttpServlet {
         }
         if (n>0){
             req.getSession().setAttribute("admin",admin);
-            resp.sendRedirect("adminLogin.jsp");// 注册成功
+            resp.sendRedirect("reg_success.jsp");// 注册成功
         }else {
             String error="注册失败";
             if (n==1){
                 error="您填写的登录ID已经存在！";
             }
             req.getSession().setAttribute("error",error);
-            resp.sendRedirect("");// 注册失败
+            resp.sendRedirect("reg_failure.jsp");// 注册失败
         }
     }
 

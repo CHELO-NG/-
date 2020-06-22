@@ -21,14 +21,13 @@ public class AddGoodsServlet extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        String goodsID=req.getParameter("goodsID");
         String goodsName=req.getParameter("goodsName");
         String goodsStart=req.getParameter("goodsStart");
         String goodsSend=req.getParameter("goodsSend");
         String consigner=req.getParameter("consigner");
         String consignee=req.getParameter("consignee");
         String phone=req.getParameter("phone");
-        String courierID=req.getParameter("courierID");
+        int courierID=Integer.parseInt(req.getParameter("courierID"));
         String courierPhone=req.getParameter("courierPhone");
         String goodsState=req.getParameter("goodsState");
         String date_str = req.getParameter("date");
@@ -36,7 +35,7 @@ public class AddGoodsServlet extends HttpServlet {
         Goods goods=null;
         try {
             Date date=df.parse(date_str);
-            goods=new Goods(goodsID,goodsName,goodsStart,goodsSend,consigner,consignee,phone,courierID,courierPhone,date,goodsState);
+            goods=new Goods(0,goodsName,goodsStart,goodsSend,consigner,consignee,phone,courierID,courierPhone,date,goodsState);
 
         } catch (ParseException e) {
             e.printStackTrace();

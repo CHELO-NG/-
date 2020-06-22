@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class AdminDaoImpl implements AdminDao {
     @Override
     public int addAdmin(Admin admin) {
-        String sql = "insert into admin values (?,?,?,?,?,?)";
+        String sql = "insert into admin values (?,?)";
         Object[] objs = {admin.getAdminID(),admin.getAdminPassword()};
         int n = JDBCUtil.excuteDML(sql, objs);
         return n;

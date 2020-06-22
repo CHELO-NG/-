@@ -1,7 +1,7 @@
 package entity;
 
 public class Courier {
-    private String courierID;// 派送人员编号
+    private int courierID;// 派送人员编号
     private String courierName;// 派送人员姓名
     private String courierPhone;// 派送人员电话号码
     private String courierArea;// 派送范围
@@ -10,19 +10,19 @@ public class Courier {
     public Courier() {
     }
 
-    public Courier(String courierCode, String courierName, String courierPhone, String courierArea, String courierSalary) {
-        this.courierID = courierCode;
+    public Courier(int courierID, String courierName, String courierPhone, String courierArea, String courierSalary) {
+        this.courierID = courierID;
         this.courierName = courierName;
         this.courierPhone = courierPhone;
         this.courierArea = courierArea;
         this.courierSalary = courierSalary;
     }
 
-    public String getCourierID() {
+    public int getCourierID() {
         return courierID;
     }
 
-    public void setCourierID(String courierCode) {
+    public void setCourierID(int courierCode) {
         this.courierID = courierCode;
     }
 

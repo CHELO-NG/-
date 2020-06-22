@@ -17,7 +17,7 @@ public class UpdateCourierServlet extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        String courierID=req.getParameter("courierID");
+        int courierID=Integer.parseInt(req.getParameter("courierID"));
         String courierName=req.getParameter("courierName");
         String courierPhone=req.getParameter("courierPhone");
         String courierArea=req.getParameter("courierArea");

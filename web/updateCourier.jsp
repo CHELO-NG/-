@@ -14,32 +14,43 @@
 <%	
 	Courier courier = (Courier)request.getAttribute("courier");
 %>
-	<form action="doupdate" method="post">
-		<input type="hidden" name="id" value="<%=courier.getCourierCode() %>">
-		<table align="center">
-			<tr>
-				<td>派送人员编号</td>
-				<td><input type="text" name="courierCode" value="<%=courier.getCourierCode()%>"></td>
-			</tr>
-			<tr>
-				<td>派送人员姓名</td>
-				<td><input type="text" name="courierName" value="<%=courier.getCourierName()%>"></td>
-			</tr>
-			<tr>
-				<td>派送人员电话号码</td>
-				<td><input type="text" name="courierPhone" value="<%=courier.getCourierPhone() %>"></td> 
-			</tr>
-			<tr>
-				<td colspan="2">
-					<input type="submit" value="保存修改">
-				</td>
-			</tr>
-		</table>
-	</form>
-
+<form  class="form-horizontal" role="form" method="post" action="updateCourier">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">派送人员编号</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="text" name="courierID" placeholder="<%=courier.getCourierID()%> " disabled>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">派送人员姓名</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="text" name="courierName" value="<%=courier.getCourierName()%>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">派送人员电话</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="text" name="courierPhone" value="<%=courier.getCourierPhone()%>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">派送人员负责区域</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="text" name="courierArea" value="<%=courier.getCourierArea()%>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">派送人员薪水</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="text" name="courierSalary" value="<%=courier.getCourierSalary()%>">
+		</div>
+	</div>
+	<input type="submit" value="提交">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="reset" value="取消">
+</form>
 <br>
 <center>
-	<a href="courier.jsp">返回</a>
+	<a href="courier">返回</a>
 </center>
 </body>
 </html>

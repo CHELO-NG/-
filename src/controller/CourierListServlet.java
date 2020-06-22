@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class CourierListServlet extends HttpServlet {
@@ -20,6 +23,7 @@ public class CourierListServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int start=0;
         int count=10;
+        String keywords=req.getParameter("keywords");
         try {
             start=Integer.parseInt(req.getParameter("page.start"));
             count=Integer.parseInt(req.getParameter("page.count"));
@@ -27,11 +31,18 @@ public class CourierListServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+        System.out.println("start:"+start+"/count:"+count+"/keywords:"+keywords);
         Page page=new Page(start,count);
+
 
         List<Courier> couriers = null;
         try {
-            couriers=courierDao.list(page.getStart(),page.getCount());
+            if (keywords==null){
+                couriers=courierDao.list(page.getStart(),page.getCount());
+            } else{
+                couriers=courierDao.listByKeywords(page.getStart(),page.getCount(),keywords);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

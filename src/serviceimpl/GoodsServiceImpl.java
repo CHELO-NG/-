@@ -6,6 +6,7 @@ import entity.Goods;
 import service.GoodsService;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 public class GoodsServiceImpl implements GoodsService {
@@ -16,7 +17,7 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public int deleteGoods(String goodsID) {
+    public int deleteGoods(int goodsID) {
         return goodsDao.deleteGoods(goodsID);
     }
 
@@ -26,12 +27,22 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Goods queryOneGoods(String goodsID) throws SQLException {
+    public Goods queryOneGoods(int goodsID) throws SQLException {
         return goodsDao.selectGoods(goodsID);
     }
 
     @Override
     public List<Goods> queryAllGoods(int start, int count) throws SQLException {
         return goodsDao.list(start, count);
+    }
+
+    @Override
+    public List<Goods> queryGoodsByKeywords(int start, int count,String keywords) throws SQLException {
+        return goodsDao.listByKeywords(start, count, keywords);
+    }
+
+    @Override
+    public List<Goods> queryGoodsByDate(int start, int count, Date date) throws SQLException {
+        return goodsDao.listByDate(start, count, date);
     }
 }

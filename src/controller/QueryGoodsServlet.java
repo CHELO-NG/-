@@ -18,7 +18,7 @@ public class QueryGoodsServlet extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        String goodsID=req.getParameter("goodsID");
+        int goodsID=Integer.parseInt(req.getParameter("goodsID"));
         GoodsService courierService=new GoodsServiceImpl();
         Goods goods=null;
         try {
