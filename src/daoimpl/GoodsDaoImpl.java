@@ -44,11 +44,11 @@ public class GoodsDaoImpl implements GoodsDao {
 
     @Override
     public int updateGoods(Goods goods) {
-        String sql1 = "update goods set goodsName=?,goodsStart=?,goodsSend=?,consigner=?,consignee=?,phone=?" +
-                "courierID=?,date=?,goodsState=? where goodsID=?";
-        Object[] objs1 = {goods.getGoodsName(), goods.getGoodsStart(),
-                goods.getGoodsSend(), goods.getConsigner(), goods.getConsignee(), goods.getPhone(),
-                goods.getCourierID(), goods.getDate(), goods.getGoodsState(), goods.getGoodsID()};
+        String sql1 = "update goods set goodsName=?,goodsStart=?,goodsSend=?,consigner=?,consignee=?,phone=?," +
+                "courierID=?,date=? where goodsID=?";
+        Object[] objs1 = {goods.getGoodsName(), goods.getGoodsStart(), goods.getGoodsSend(),
+                goods.getConsigner(), goods.getConsignee(), goods.getPhone(), goods.getCourierID(),
+                new SimpleDateFormat("yyyy-MM-dd").format(goods.getDate()), goods.getGoodsID()};
         int n1 = JDBCUtil.excuteDML(sql1, objs1);
         String sql2 = "update state set goodsState=? where goodsID=?";
         Object[] objs2 = {goods.getGoodsState(), goods.getGoodsID()};

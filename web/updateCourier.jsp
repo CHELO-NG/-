@@ -14,40 +14,44 @@
 <%	
 	Courier courier = (Courier)request.getAttribute("courier");
 %>
-<form  class="form-horizontal" role="form" method="post" action="updateCourier">
-	<div class="form-group">
-		<label class="col-sm-2 control-label">派送人员编号</label>
-		<div class="col-sm-10">
-			<input class="form-control" type="text" name="courierID" placeholder="<%=courier.getCourierID()%> " disabled>
+<center>
+	<form  class="form-horizontal" role="form" method="post" action="updateCourier">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">派送人员编号</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" name="courierID" value="<%=courier.getCourierID()%> "disabled >
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<label class="col-sm-2 control-label">派送人员姓名</label>
-		<div class="col-sm-10">
-			<input class="form-control" type="text" name="courierName" value="<%=courier.getCourierName()%>">
+		<input type="hidden" name="courierID" value="<%=courier.getCourierID()%>">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">派送人员姓名</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" name="courierName" value="<%=courier.getCourierName()%>">
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<label class="col-sm-2 control-label">派送人员电话</label>
-		<div class="col-sm-10">
-			<input class="form-control" type="text" name="courierPhone" value="<%=courier.getCourierPhone()%>">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">派送人员电话</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" name="courierPhone" value="<%=courier.getCourierPhone()%>">
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<label class="col-sm-2 control-label">派送人员负责区域</label>
-		<div class="col-sm-10">
-			<input class="form-control" type="text" name="courierArea" value="<%=courier.getCourierArea()%>">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">派送人员负责区域</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" name="courierArea" value="<%=courier.getCourierArea()%>">
+			</div>
 		</div>
-	</div>
-	<div class="form-group">
-		<label class="col-sm-2 control-label">派送人员薪水</label>
-		<div class="col-sm-10">
-			<input class="form-control" type="text" name="courierSalary" value="<%=courier.getCourierSalary()%>">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">派送人员薪水</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" name="courierSalary" value="<%=courier.getCourierSalary()%>">
+			</div>
 		</div>
-	</div>
-	<input type="submit" value="提交">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="reset" value="取消">
-</form>
+		<input type="submit" value="提交">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="reset" value="取消">
+	</form>
+</center>
+
 <br>
 <center>
 	<a href="courier">返回</a>

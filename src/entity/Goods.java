@@ -3,14 +3,14 @@ package entity;
 import java.util.Date;
 
 public class Goods {
-    private int goodsID;// 货单号
+    private Integer goodsID;// 货单号
     private String goodsName;// 货物名称
     private String goodsStart;// 发货地址
     private String goodsSend;// 收货地址
     private String consigner;// 发货人
     private String consignee;// 收货人
     private String phone;// 收货人电话
-    private int courierID;// 派送人员编号
+    private Integer courierID;// 派送人员编号
     private String courierPhone;// 派送人员电话号码
     private Date date;// 发货时间
     private String goodsState;// 货物状态

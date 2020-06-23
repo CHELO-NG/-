@@ -1,7 +1,7 @@
 package entity;
 
 public class Courier {
-    private int courierID;// 派送人员编号
+    private Integer courierID;// 派送人员编号
     private String courierName;// 派送人员姓名
     private String courierPhone;// 派送人员电话号码
     private String courierArea;// 派送范围

@@ -1,9 +1,9 @@
 package controller;
 
-import dao.GoodsDao;
-import daoimpl.GoodsDaoImpl;
-import entity.Goods;
+import dao.SalaryDao;
+import daoimpl.SalaryDaoImpl;
 import entity.Page;
+import entity.Salary;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-public class GoodsListServlet extends HttpServlet {
-    private GoodsDao goodsDao=new GoodsDaoImpl();
+public class SalaryListServlet extends HttpServlet {
+    private SalaryDao salaryDao=new SalaryDaoImpl();
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,13 +29,13 @@ public class GoodsListServlet extends HttpServlet {
         }
 
         Page page=new Page(start,count);
-        List<Goods> goods=null;
+        List<Salary> salary=null;
 
         try {
             if (keywords==null){
-                goods=goodsDao.list(page.getStart(),page.getCount());
+                salary=salaryDao.list(page.getStart(),page.getCount());
             }else {
-               goods=goodsDao.listByKeywords(page.getStart(),page.getCount(),keywords);
+                salary=salaryDao.listByKeywords(page.getStart(),page.getCount(),keywords);
             }
 
         } catch (SQLException e) {
@@ -43,13 +43,13 @@ public class GoodsListServlet extends HttpServlet {
         }
         int total=0;
         try {
-            total=goodsDao.getTotal();
+            total=salaryDao.getTotal();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         page.setTotal(total);
-        req.setAttribute("goods",goods);
+        req.setAttribute("salary",salary);
         req.setAttribute("page",page);
-        req.getRequestDispatcher("/goods.jsp").forward(req,resp);// 货物页面
+        req.getRequestDispatcher("/salary.jsp").forward(req,resp);// 货物页面
     }
 }

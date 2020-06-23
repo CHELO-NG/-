@@ -38,6 +38,14 @@
         <url-pattern>/courier</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>SalaryListServlet</servlet-name>
+        <servlet-class>controller.SalaryListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SalaryListServlet</servlet-name>
+        <url-pattern>/salary</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>QueryCourierServlet</servlet-name>
         <servlet-class>controller.QueryCourierServlet</servlet-class>
     </servlet>

@@ -17,12 +17,13 @@ public class UpdateCourierServlet extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=utf-8");
 
-        int courierID=Integer.parseInt(req.getParameter("courierID"));
+        Integer courierID=Integer.parseInt(req.getParameter("courierID").trim());
         String courierName=req.getParameter("courierName");
         String courierPhone=req.getParameter("courierPhone");
         String courierArea=req.getParameter("courierArea");
         String courierSalary=req.getParameter("courierSalary");
         Courier courier=new Courier(courierID,courierName,courierPhone,courierArea,courierSalary);
+        System.out.println(courier.toString());
 
         CourierService courierService=new CourierServiceImpl();
         int n=courierService.updateCourier(courier);
